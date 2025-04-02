@@ -26,7 +26,9 @@ export const AppProvider = ({ children }) => {
   };
 
   const register = async (username, password, confirmPassword) => {
-    return getResponse(api.register(username, password, confirmPassword));
+    console.log("register?");
+    
+    return await getResponse(api.register(username, password, confirmPassword));
   }
   
   return <AppContext.Provider value={{ register }}>{children}</AppContext.Provider>;
