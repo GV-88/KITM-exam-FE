@@ -18,11 +18,15 @@ const Register = () => {
 		setError(null);
 
 		try {
-			console.log("?");
+			console.log(typeof(register));
 			console.log(register);
+			console.log(userData);
 			
 			
-			await register(...userData);
+			// const discard = await register(...userData);
+			const discard = await register(userData.username, userData.password, userData.confirmPassword);
+			console.log(discard);
+			
 		} catch (error) {
 			setError(error?.messageCode ?? "failed to register");
 		} finally {
